@@ -7,6 +7,10 @@ See it in action: http://www.swinburne.edu.au/lib/new_titles/
 
 License: GPLv3 or above
 
+Screenshot
+---
+![screenshot](http://i.minus.com/iUhIcbXns0CRY.png)
+
 Data
 ---
 
