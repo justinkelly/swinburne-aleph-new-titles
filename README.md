@@ -40,5 +40,12 @@ $config['syndetics']=''; //enter your syndetics client code
 $config['primo_institution']=''; //enter your primo instition
 $config['primo_vid']=''; // enter your primo view id
 $config['syndetics']='http://librarysearch.swinburne.edu.au/primo_library/libweb/action/dlSearch.do? . $aleph_id ."&vid=' . $config['primo_vid'] . '&onCampus=true&group=GUEST&institution='. $config['primo_institution'] .'query=any,contains,'; //set your primo deep link to search results
-````
 
+````
+Includes
+---
+jQuery Isotope:
+http://isotope.metafizzy.co/
+
+Twitter Bootstrap CSS: 
+http://twitter.github.com/bootstrap/
