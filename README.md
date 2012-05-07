@@ -1,16 +1,16 @@
 News titles list for Swinburne Library
 =====
 
-Developed to highlight new items in the Swinburne Library based on information from ExLirbis Aleph 
+Developed to highlight new items in the Swinburne Library based on information from ExLibris Aleph 
 
-Website: http://www.swinburne.edu.au/lib/new_titles/
+See it in action: http://www.swinburne.edu.au/lib/new_titles/
 
 License: GPLv3 or above
 
 Data
 ---
 
-You need to create an Aleph report that generated the below data format
+You need to create an Aleph report that generates the below data format
 
 ```` xml
 <section-02>
