@@ -1,12 +1,16 @@
 News titles list for Swinburne Library
 =====
 
-Developed t
-
+Developed to highlight new items in the Swinburne Library based on information from ExLirbis Aleph 
 
 Website: http://www.swinburne.edu.au/lib/new_titles/
 
 License: GPLv3 or above
+
+Data
+---
+
+You need to create an Aleph report that generated the below data format
 
 ```` xml
 <section-02>
@@ -24,3 +28,17 @@ License: GPLv3 or above
 <data-6>000930049</data-6>
 </section-02>
 ````
+
+Upload your data as data.xml and place in this directory
+
+Config
+---
+Edit the inc.php file and set the below 4 confirguration settings
+
+```` php
+$config['syndetics']=''; //enter your syndetics client code
+$config['primo_institution']=''; //enter your primo instition
+$config['primo_vid']=''; // enter your primo view id
+$config['syndetics']='http://librarysearch.swinburne.edu.au/primo_library/libweb/action/dlSearch.do? . $aleph_id ."&vid=' . $config['primo_vid'] . '&onCampus=true&group=GUEST&institution='. $config['primo_institution'] .'query=any,contains,'; //set your primo deep link to search results
+````
+

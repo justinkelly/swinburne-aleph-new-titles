@@ -1,4 +1,11 @@
 <?php
+
+/*Config setting - pelase change to represent your setup */
+$config['syndetics']=''; //enter your syndetics client code
+$config['primo_institution']=''; //enter your primo instition
+$config['primo_vid']=''; // enter your primo view id
+$config['syndetics']='http://librarysearch.swinburne.edu.au/primo_library/libweb/action/dlSearch.do? . $aleph_id ."&vid=' . $config['primo_vid'] . '&onCampus=true&group=GUEST&institution='. $config['primo_institution'] .'query=any,contains,'; //set your primo deep link to search results
+
 $xml = simplexml_load_file("data.xml");
 
 // Original PHP code by Chirp Internet: www.chirp.com.au
@@ -91,31 +98,23 @@ foreach($xml->children() as $child)
 			$isbn = "000";
 		}
 
-		//thumb
+		//primo link
+		$primo_link = $config['primo-link'] . $aleph_id ;
 
-		//thumbnail
-/*		$url = "https://www.googleapis.com/books/v1/volumes?q=isbn:" . $isbn . "&maxResults=1";
-		$data = json_decode(file_get_contents($url),true);
-		$thumb =$data['imageLinks']['thumbnail'];
-*/
-	//	var_dump($data);
-		//prim o link
-		//$primo_link = "http://librarysearch.swinburne.edu.au/primo_library/libweb/action/search.do?vl(freeText0)=" . $aleph_id . "&fn=search&vid=SWIN2";
-		$primo_link = "http://librarysearch.swinburne.edu.au/primo_library/libweb/action/display.do?tabs=detailsTab&ct=display&fn=search&doc=sut_aleph" . $aleph_id . "&indx=1&recIdxs=0&elementId=0&renderMode=poppedOut&displayMode=full&frbrVersion=&dscnt=0&vid=SWIN2";
 		echo "
   <div class='item " .$format . " " . $call_number ."'>
     <div class='thumbnail'>
 	<div class='innerthumb'>
 	<!-- 200px x 150px -->
       <a href='". $primo_link."'>
-		<img class='thumb thumb".$format."' width='70px' height='100px' src='http://syndetics.com/index.php?isbn=". $isbn ."/sc.jpg&client=swina' alt=''/>
+		<img class='thumb thumb".$format."' width='70px' height='100px' src='http://syndetics.com/index.php?isbn=". $isbn ."/sc.jpg&client=' alt=''/>
 	</a>
 	</div>
 	<p>". myTruncate($title, '40', ' ') ."</p>
       <p>
 	<a href='". $primo_link ."'>
 	<img class='external-link' src='http://librarysearch.swinburne.edu.au/primo_library/libweb/images/extlink.gif'>
-	Get It</a>  
+	Details</a>  
 	<span class='" . $label_class . "'>". $format . "</span>
 </p>
     </div>
